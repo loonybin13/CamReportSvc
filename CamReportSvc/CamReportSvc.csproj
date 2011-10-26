@@ -63,7 +63,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Service1.cs" />
+    <Compile Include="Prestige.cs" />
+    <Compile Include="ReportBase.cs" />
+    <Compile Include="Chapter.cs" />
     <Compile Include="SampleItem.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

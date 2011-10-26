@@ -8,14 +8,8 @@ using System.Text;
 
 namespace CamReportSvc
 {
-    // Start the service and browse to http://<machine_name>:<port>/Service1/help to view the service's generated help page
-    // NOTE: By default, a new instance of the service is created for each call; change the InstanceContextMode to Single if you want
-    // a single instance of the service to process all calls.	
     [ServiceContract]
-    [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
-    [ServiceBehavior(InstanceContextMode = InstanceContextMode.PerCall)]
-    // NOTE: If the service is renamed, remember to update the global.asax.cs file
-    public class Service1
+    public class Chapter : ReportBase
     {
         // TODO: Implement the collection resource that will contain the SampleItem instances
 
@@ -34,10 +28,9 @@ namespace CamReportSvc
         }
 
         [WebGet(UriTemplate = "{id}")]
-        public SampleItem Get(string id)
+        public List<Prestige> Get(string id)
         {
-            // TODO: Return the instance of SampleItem with the given id
-            throw new NotImplementedException();
+            return new List<Prestige>() { new Prestige() { Amount = 30, Category = PrestigeCategory.Administration, Type = PrestigeType.General, Description = "ACC" }, new Prestige() { Amount = 30, Category = PrestigeCategory.Administration, Type = PrestigeType.General, Description = "ACC" } };
         }
 
         [WebInvoke(UriTemplate = "{id}", Method = "PUT")]
